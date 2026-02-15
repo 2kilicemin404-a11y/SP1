@@ -1,16 +1,33 @@
 
     void main () {
-//Opgave 1
-// Karakterens stats
+        String navn = "Ragnar";
 
+        int healthPoints = 85;
 
-//Items i karakterens inventory
+        int maxHealth = 100;
+
+        int level = 5;
+
+        int experience = 2300;
+
+        double gold = 156.50;
+
+        boolean alive = true;
+
+        String klasse = "Warrior";
+
+        System.out.println("****Character****");
+        System.out.println("Navn: " + navn);
+        System.out.println("klasse: " + klasse);
+        System.out.println("Health: " + healthPoints + "/" + maxHealth);
+        System.out.println("experience: " + experience);
+        System.out.println("lvl: " + level);
+        System.out.println("gold: " + gold);
+        System.out.println("alive: " + alive);
+
         String[] characterItems = {"-Sword", "-Dagger", "-Shield"};
 
-
-
         String inventoryText = " ";
-
 
         for (int i = 0; i < characterItems.length; i++) {
             inventoryText = inventoryText + characterItems[i];
@@ -43,15 +60,11 @@
 
             default:
                 System.out.println("Classes: " );
-
-
         }
         if (experience >= 1000 * level){
             System.out.println("Ready to level up!");
         }else {
             System.out.println("Not ready to level up!");
-
-
 
         }
         int numberOfItems = characterItems.length;
@@ -61,20 +74,28 @@
             System.out.println( item);
         }
 
+        int incomingDamage = 30;
 
+        healthPoints = healthPoints - incomingDamage;
+        System.out.println("Ragnar took damage! new health: " + healthPoints);
 
-
-
-
-
-
-
+        if (healthPoints >0) {
+            System.out.println("Ragnar is still alive!");
+        }else{
+            System.out.println("Ragnar is dead! " + "Game over");
+        }
 
 
     }
 
 
 
+
+
+
+
+
+    //metoder begynder
 
     String navn = "Ragnar";
 
@@ -127,8 +148,23 @@
         System.out.println(navn + " healed for " + amount + " HP.");
         System.out.println("Current health: " + healthPoints + "/" + maxHealth);
 
-
     }
 
 
+void addGold(double amount){
+         gold =  gold + amount;
+}
 
+boolean removeGold(double amount){
+        if(gold >= amount) {
+            gold = gold - amount;
+            return true;
+
+        }else {
+            return false;
+
+        }
+}
+
+
+}
