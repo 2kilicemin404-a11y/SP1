@@ -2,34 +2,11 @@
     void main () {
 //Opgave 1
 // Karakterens stats
-        String navn = "Ragnar";
 
-        int healthPoints = 85;
-
-        int maxHealth = 100;
-
-        int level = 5;
-
-        int experience = 2300;
-
-        double gold = 156.50;
-
-        boolean alive = true;
-
-        String klasse = "Warrior";
 
 //Items i karakterens inventory
         String[] characterItems = {"-Sword", "-Dagger", "-Shield"};
 
-
-        System.out.println("****Character****");
-        System.out.println("Navn: " + navn);
-        System.out.println("klasse: " + klasse);
-        System.out.println("Health: " + healthPoints + "/" + maxHealth);
-        System.out.println("experience: " + experience);
-        System.out.println("lvl: " + level);
-        System.out.println("gold: " + gold);
-        System.out.println("alive: " + alive);
 
 
         String inventoryText = " ";
@@ -87,16 +64,10 @@
 
 
 
-        int incomingDamage = 30;
 
-        healthPoints = healthPoints - incomingDamage;
-System.out.println("Ragnar took damage! new health: " + healthPoints);
 
-       if (healthPoints >0) {
-           System.out.println("Ragnar is still alive!");
-       }else{
-           System.out.println("Ragnar is dead! " + "Game over");
-       }
+
+
 
 
 
@@ -105,6 +76,59 @@ System.out.println("Ragnar took damage! new health: " + healthPoints);
 
 
 
+    String navn = "Ragnar";
+
+    int healthPoints = 85;
+
+    int maxHealth = 100;
+
+    int level = 5;
+
+    int experience = 2300;
+
+    double gold = 156.50;
+
+    boolean alive = true;
+
+    String klasse = "Warrior";
+
+    void printCharacterSheet() {
+        System.out.println("****Character****");
+        System.out.println("Navn: " + navn);
+        System.out.println("klasse: " + klasse);
+        System.out.println("Health: " + healthPoints + "/" + maxHealth);
+        System.out.println("experience: " + experience);
+        System.out.println("lvl: " + level);
+        System.out.println("gold: " + gold);
+        System.out.println("alive: " + alive);
+    }
+
+
+    void takeDamage(int amount){
+        int incomingDamage = 30;
+
+        healthPoints = healthPoints - incomingDamage;
+        System.out.println("Ragnar took damage! new health: " + healthPoints);
+
+        if (healthPoints >0) {
+            System.out.println("Ragnar is still alive!");
+        }else{
+            System.out.println("Ragnar is dead! " + "Game over");
+        }
+
+    }
+
+    void heal(int amount){
+        healthPoints= healthPoints + amount;
+
+        if (healthPoints > maxHealth);{
+            healthPoints=maxHealth;
+        }
+        System.out.println(navn + " healed for " + amount + " HP.");
+        System.out.println("Current health: " + healthPoints + "/" + maxHealth);
+
+
+    }
 
 
 
