@@ -1,5 +1,20 @@
 
         void main () {
+            printCharacterSheet();
+            takeDamage(30);
+            heal(20);
+            addGold(0);
+            removeGold(0);
+            addXP(0);
+            levelUp();
+            isHealthCritical();
+            isAlive();
+            getHealthPercentage();
+            printInventory();
+
+
+
+        }
 //            String navn = "Ragnar";
 
 //            int healthPoints = 85;
@@ -25,18 +40,18 @@
 //            System.out.println("gold: " + gold);
 //            System.out.println("alive: " + alive);
 
-            String[] characterItems = {"-Sword", "-Dagger", "-Shield"};
+//            String[] characterItems = {"-Sword", "-Dagger", "-Shield"};
 
-            String inventoryText = " ";
-
-            for (int i = 0; i < characterItems.length; i++) {
-                inventoryText = inventoryText + characterItems[i];
-                inventoryText = inventoryText + "\n";
-
-                System.out.println("Ragnars invetory:");
-                System.out.println(inventoryText);
-
-            }
+//            String inventoryText = " ";
+//
+//            for (int i = 0; i < characterItems.length; i++) {
+//                inventoryText = inventoryText + characterItems[i];
+//                inventoryText = inventoryText + "\n";
+//
+//                System.out.println("Ragnars invetory:");
+//                System.out.println(inventoryText);
+//
+//            }
 
 //
 //            if (healthPoints <= 0.25 * maxHealth) {
@@ -47,32 +62,32 @@
 //                System.out.println("Alive: " + alive);
 //            }
 
-            switch (klasse) {
-                case "Warrior":
-                    System.out.println("Ragnar has a sword!");
-                    break;
-                case "Mage":
-                    System.out.println("Ragnar has a wand!");
-                    break;
-                case "Rogue":
-                    System.out.println("Ragnar has a dagger!");
-                    break;
-
-                default:
-                    System.out.println("Classes: " );
-            }
+//            switch (klasse) {
+//                case "Warrior":
+//                    System.out.println("Ragnar has a sword!");
+//                    break;
+//                case "Mage":
+//                    System.out.println("Ragnar has a wand!");
+//                    break;
+//                case "Rogue":
+//                    System.out.println("Ragnar has a dagger!");
+//                    break;
+//
+//                default:
+//                    System.out.println("Classes: ");
+//            }
 //            if (experience >= 1000 * level){
 //                System.out.println("Ready to level up!");
 //            }else {
 //                System.out.println("Not ready to level up!");
 
-            }
-            int numberOfItems = characterItems.length;
-            System.out.println("Invetory (items): = " + numberOfItems);
-
-            for (String item : characterItems){
-                System.out.println( item);
-            }
+//            }
+//            int numberOfItems = characterItems.length;
+//            System.out.println("Invetory (items): = " + numberOfItems);
+//
+//            for (String item : characterItems){
+//                System.out.println( item);
+//            }
 //
 //            int incomingDamage = 30;
 //
@@ -113,6 +128,10 @@
 
     String klasse = "Warrior";
 
+        String[] characterItems = {"-Sword", "-Dagger", "-Shield"};
+
+
+
     void printCharacterSheet() {
         System.out.println("****Character****");
         System.out.println("Navn: " + navn);
@@ -126,9 +145,9 @@
 
 
     void takeDamage(int amount){
-        int incomingDamage = 30;
 
-        healthPoints = healthPoints - incomingDamage;
+
+        healthPoints = healthPoints - amount;
         System.out.println("Ragnar took damage! new health: " + healthPoints);
 
         if (healthPoints >0) {
@@ -195,7 +214,7 @@ boolean isHealthCritical() {
     }
 
 
-    boolean alive(){
+    boolean isAlive(){
         if (healthPoints > 0) {
             return true;
         }else {
@@ -205,6 +224,15 @@ boolean isHealthCritical() {
 
 
     double getHealthPercentage(){
-        healthPoints = maxHealth/
+        return (healthPoints * 100.0)/ maxHealth;
 
+    }
+
+    void printInventory(){
+        int numberOfItems = characterItems.length;
+        System.out.println("Invetory (items): = " + numberOfItems);
+
+        for (String item : characterItems) {
+            System.out.println(item);
+        }
     }
