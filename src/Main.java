@@ -78,7 +78,12 @@
         }
 
 
+        for (String item : characterItems){
+            System.out.println("InvetoryItems: " + item);
+        }
 
+int numberOfItems = characterItems.length;
+        System.out.println("Total items: " + numberOfItems);
 
 
 
