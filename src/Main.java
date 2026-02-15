@@ -19,7 +19,7 @@
         String klasse = "Warrior";
 
 //Items i karakterens inventory
-        String[] characterItems = {"Sword", "Dagger", "Shield"};
+        String[] characterItems = {"-Sword", "-Dagger", "-Shield"};
 
 
         System.out.println("****Character****");
@@ -32,14 +32,14 @@
         System.out.println("alive: " + alive);
 
 
-        String inventoryText = "- ";
+        String inventoryText = " ";
 
 
         for (int i = 0; i < characterItems.length; i++) {
             inventoryText = inventoryText + characterItems[i];
             inventoryText = inventoryText + "\n";
 
-            System.out.println("Items");
+            System.out.println("Ragnars invetory:");
             System.out.println(inventoryText);
 
         }
@@ -55,13 +55,13 @@
 
         switch (klasse) {
             case "Warrior":
-                System.out.println("I got a sword");
+                System.out.println("Ragnar has a sword!");
                 break;
             case "Mage":
-                System.out.println("i got a wand");
+                System.out.println("Ragnar has a wand!");
                 break;
             case "Rogue":
-                System.out.println("I got a dagger");
+                System.out.println("Ragnar has a dagger!");
                 break;
 
             default:
@@ -75,25 +75,28 @@
             System.out.println("Not ready to level up!");
 
 
-        }
 
+        }
+        int numberOfItems = characterItems.length;
+        System.out.println("Invetory (items): = " + numberOfItems);
 
         for (String item : characterItems){
-            System.out.println("InvetoryItems: " + item);
+            System.out.println( item);
         }
 
-int numberOfItems = characterItems.length;
-        System.out.println("Total items: " + numberOfItems);
 
 
 
+        int incomingDamage = 30;
 
+        healthPoints = healthPoints - incomingDamage;
+System.out.println("Ragnar took damage! new health: " + healthPoints);
 
-
-
-
-
-
+       if (healthPoints >0) {
+           System.out.println("Ragnar is still alive!");
+       }else{
+           System.out.println("Ragnar is dead! " + "Game over");
+       }
 
 
 
