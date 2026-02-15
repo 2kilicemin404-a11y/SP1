@@ -1,22 +1,5 @@
-
-        void main () {
-            printCharacterSheet();
-            takeDamage(30);
-            heal(20);
-            addGold(0);
-            removeGold(0);
-            addXP(0);
-            levelUp();
-            isHealthCritical();
-            isAlive();
-            getHealthPercentage();
-            printInventory();
-
-
-
-        }
+// opgave 1
 //            String navn = "Ragnar";
-
 //            int healthPoints = 85;
 //
 //            int maxHealth = 100;
@@ -53,7 +36,7 @@
 //
 //            }
 
-//
+// opgave 2
 //            if (healthPoints <= 0.25 * maxHealth) {
 //                System.out.println("WARNING: Health critical!");
 //            } else if (healthPoints <= 0){
@@ -105,12 +88,28 @@
 
 
 
+//main sat ind, ved brug af forrige opgaver lavet oppe over.
+void main () {
+    printCharacterSheet();
+    classSpeech();
+    takeDamage(30);
+    heal(20);
+    addGold(500);
+    removeGold(100);
+    addXP(5000);
+    isHealthCritical();
+    isAlive();
+    getHealthPercentage();
+    printInventory();
 
 
 
+    if(isHealthCritical()){
+        System.out.println("WARNING: Health critical!");
+    }
+}
 
-
-    //metoder begynder
+    //opgave 3 metoder begynder
 
     String navn = "Ragnar";
 
@@ -188,6 +187,7 @@ boolean removeGold(double amount){
         experience = experience + amount;
         if (experience >= 1000 * level){
             System.out.println("Ready to level up!");
+            levelUp();
         }else {
             System.out.println("Not ready to level up!");
         }
@@ -235,4 +235,22 @@ boolean isHealthCritical() {
         for (String item : characterItems) {
             System.out.println(item);
         }
+    }
+
+    void classSpeech(){
+        switch (klasse) {
+            case "Warrior":
+                System.out.println("Warrior: has a sword!");
+                break;
+            case "Mage":
+                System.out.println("Mage: has a wand!");
+                break;
+            case "Rogue":
+                System.out.println("Rogue: has a dagger!");
+                break;
+
+            default:
+                System.out.println("Class: ");
+        }
+
     }
