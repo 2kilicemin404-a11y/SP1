@@ -95,18 +95,26 @@ void main () {
     takeDamage(30);
     heal(20);
     addGold(500);
-    removeGold(100);
-    addXP(5000);
+    removeGold(0);
+    addXP(500);
     isHealthCritical();
     isAlive();
     getHealthPercentage();
     printInventory();
 
 
+    if(removeGold(100.00)){
+        System.out.println("Bought a potion!");
+    } else {
+        System.out.println("Not enough gold!");
+    }
+
 
     if(isHealthCritical()){
         System.out.println("WARNING: Health critical!");
+
     }
+    System.out.println("Health: " + getHealthPercentage() + "%");
 }
 
     //opgave 3 metoder begynder
@@ -132,7 +140,7 @@ void main () {
 
 
     void printCharacterSheet() {
-        System.out.println("****Character****");
+        System.out.println("===== CHARACTER SHEET ====");
         System.out.println("Navn: " + navn);
         System.out.println("klasse: " + klasse);
         System.out.println("Health: " + healthPoints + "/" + maxHealth);
