@@ -88,13 +88,14 @@
 
 
 
-//main sat ind, ved brug af forrige opgaver lavet oppe over.
+//nu er alt oppe over, fjernet og // og metoderne er sat ind i main istedet.
+//lavet opgave 1, 2 blive oppe over så du kan se hvad jeg har lavet evt.
 void main () {
     printCharacterSheet();
     classSpeech();
     takeDamage(30);
     heal(20);
-    addGold(500);
+    addGold(1000);
     removeGold(0);
     addXP(500);
     isHealthCritical();
@@ -147,8 +148,27 @@ void main () {
         System.out.println("experience: " + experience);
         System.out.println("lvl: " + level);
         System.out.println("gold: " + gold);
-        System.out.println("alive: " + alive);
+        System.out.println("alive: " + isAlive());
+
+
     }
+void classSpeech(){
+            switch (klasse) {
+                case "Warrior":
+                   System.out.println("Ragnar has a sword!");
+                    break;
+               case "Mage":
+                    System.out.println("Ragnar has a wand!");
+                    break;
+               case "Rogue":
+                    System.out.println("Ragnar has a dagger!");
+                    break;
+
+               default:
+                    System.out.println("Classes: ");
+           }
+    System.out.println("====================");
+}
 
 
     void takeDamage(int amount){
@@ -158,9 +178,12 @@ void main () {
         System.out.println("Ragnar took damage! new health: " + healthPoints);
 
         if (healthPoints >0) {
+            alive = true;
             System.out.println("Ragnar is still alive!");
         }else{
+            alive = false;
             System.out.println("Ragnar is dead! " + "Game over");
+
         }
 
     }
@@ -173,6 +196,7 @@ void main () {
         }
         System.out.println(navn + " healed for " + amount + " HP.");
         System.out.println("Current health: " + healthPoints + "/" + maxHealth);
+        System.out.println("====================");
 
     }
 
@@ -180,7 +204,6 @@ void main () {
 void addGold(double amount){
          gold =  gold + amount;
 }
-
 boolean removeGold(double amount){
         if(gold >= amount) {
             gold = gold - amount;
@@ -221,7 +244,6 @@ boolean isHealthCritical() {
     }
     }
 
-
     boolean isAlive(){
         if (healthPoints > 0) {
             return true;
@@ -234,6 +256,7 @@ boolean isHealthCritical() {
     double getHealthPercentage(){
         return (healthPoints * 100.0)/ maxHealth;
 
+
     }
 
     void printInventory(){
@@ -242,23 +265,9 @@ boolean isHealthCritical() {
 
         for (String item : characterItems) {
             System.out.println(item);
+
         }
     }
 
-    void classSpeech(){
-        switch (klasse) {
-            case "Warrior":
-                System.out.println("Warrior: has a sword!");
-                break;
-            case "Mage":
-                System.out.println("Mage: has a wand!");
-                break;
-            case "Rogue":
-                System.out.println("Rogue: has a dagger!");
-                break;
 
-            default:
-                System.out.println("Class: ");
-        }
 
-    }
