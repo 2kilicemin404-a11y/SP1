@@ -95,8 +95,8 @@ void main () {
     classSpeech();
     takeDamage(30);
     heal(20);
-    addGold(1000);
-    removeGold(0);
+    addGold(500);
+    removeGold(100);
     addXP(500);
     isHealthCritical();
     isAlive();
@@ -104,8 +104,10 @@ void main () {
     printInventory();
 
 
+
+
     if(removeGold(100.00)){
-        System.out.println("Bought a potion!");
+        System.out.println("Ragnar bought a potion!");
     } else {
         System.out.println("Not enough gold!");
     }
@@ -203,6 +205,7 @@ void classSpeech(){
 
 void addGold(double amount){
          gold =  gold + amount;
+    System.out.println("new gold earned!: " + gold);
 }
 boolean removeGold(double amount){
         if(gold >= amount) {
