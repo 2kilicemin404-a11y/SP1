@@ -22,8 +22,6 @@ void main () {
     hero.getHealthPercentage();
 
 
-
-
     System.out.println("Health hero: " + hero.getHealthPercentage() + "%");
     System.out.println("Health enemy: " + enemy.getHealthPercentage() + "%");
 
