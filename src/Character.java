@@ -38,13 +38,13 @@ public class Character {
     void classSpeech(){
         switch (klasse) {
             case "Warrior":
-                System.out.println("Ragnar has a sword!");
+                System.out.println( navn + " has a sword!");
                 break;
             case "Mage":
-                System.out.println("Ragnar has a wand!");
+                System.out.println( navn + " has a wand!");
                 break;
             case "Rogue":
-                System.out.println("Ragnar has a dagger!");
+                System.out.println(navn +" has a dagger!");
                 break;
 
             default:
@@ -58,16 +58,18 @@ public class Character {
 
 
         healthPoints = healthPoints - amount;
-        System.out.println("Ragnar took damage! new health: " + healthPoints);
+        System.out.println( navn + " took damage! new health: " + healthPoints);
 
         if (healthPoints >0) {
             alive = true;
-            System.out.println("Ragnar is still alive!");
+            System.out.println( navn +" is still alive!");
         }else{
             alive = false;
-            System.out.println("Ragnar is dead! " + "Game over");
+            System.out.println( navn +" is dead! " + "Finished!");
 
         }
+
+
 
     }
 
@@ -150,6 +152,11 @@ public class Character {
             System.out.println(item);
 
         }
+    }
+
+    void attack(Character target, int amount){
+target.takeDamage(amount);
+
     }
 
 }

@@ -1,20 +1,31 @@
 void main () {
     String[]characterItems1 ={"-Sword", "-Dagger", "-Shield"};
-    Character hero = new Character("Ragnar", 85, 100,5,2300,156.50, true, "warrior", characterItems1);
-    String[]characterItems2 ={"-knife", "-Helmet", "-Bomb"};
+    Character hero = new Character("Ragnar", 85, 100,5,2300,156.50, true, "Warrior", characterItems1);
+    String[]characterItems2 ={"-knife", "-Helmet", "-Dagger"};
     Character enemy = new Character("Goblin",100, 100,6,2500,200,true,"Rogue", characterItems2);
     hero.printCharacterSheet();
-    enemy.printCharacterSheet();
+    hero.printInventory();
     hero.classSpeech();
-    hero.takeDamage(30);
+    enemy.printCharacterSheet();
+    enemy.classSpeech();
+    enemy.printInventory();
+
+    hero.attack(enemy,20);
+    enemy.attack(hero,20);
     hero.heal(20);
-    hero.addGold(500);
+    hero.attack(enemy,80);
+    hero.addGold(200);
     hero.removeGold(100);
     hero.addXP(500);
     hero.isHealthCritical();
     hero.isAlive();
     hero.getHealthPercentage();
-    hero.printInventory();
+
+
+
+
+    System.out.println("Health hero: " + hero.getHealthPercentage() + "%");
+    System.out.println("Health enemy: " + enemy.getHealthPercentage() + "%");
 
     if(hero.removeGold(100.00)){
         System.out.println("bought a potion!");
@@ -27,8 +38,7 @@ void main () {
 
     }
 
-    System.out.println("Health: " + hero.getHealthPercentage() + "%");
-    System.out.println("Health: " + enemy.getHealthPercentage() + "%");
+
 }
 
 
