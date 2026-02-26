@@ -1,3 +1,38 @@
+void main () {
+    String[]characterItems1 ={"-Sword", "-Dagger", "-Shield"};
+    Character hero = new Character("Ragnar", 85, 100,5,2300,156.50, true, "warrior", characterItems1);
+    String[]characterItems2 ={"-knife", "-Helmet", "-Bomb"};
+    Character enemy = new Character("Goblin",100, 100,6,2500,200,true,"Rogue", characterItems2);
+    hero.printCharacterSheet();
+    enemy.printCharacterSheet();
+    hero.classSpeech();
+    hero.takeDamage(30);
+    hero.heal(20);
+    hero.addGold(500);
+    hero.removeGold(100);
+    hero.addXP(500);
+    hero.isHealthCritical();
+    hero.isAlive();
+    hero.getHealthPercentage();
+    hero.printInventory();
+
+    if(hero.removeGold(100.00)){
+        System.out.println("bought a potion!");
+    } else {
+        System.out.println("Not enough gold!");
+    }
+
+    if(hero.isHealthCritical()){
+        System.out.println("WARNING: Health critical!");
+
+    }
+
+    System.out.println("Health: " + hero.getHealthPercentage() + "%");
+    System.out.println("Health: " + enemy.getHealthPercentage() + "%");
+}
+
+
+
 // opgave 1
 //            String navn = "Ragnar";
 //            int healthPoints = 85;
@@ -86,47 +121,7 @@
 //
 //        }
 
-
-
-    // opgave 1-2 stående oppe over.
-    void main () {
-    String[]characterItems1 ={"-Sword", "-Dagger", "-Shield"};
-    Character hero = new Character("Ragnar", 85, 100,5,2300,156.50, true, "warrior", characterItems1);
-    String[]characterItems2 ={"-knife", "-Helmet", "-Bomb"};
-    Character enemy = new Character("Skibno",100, 100,6,2500,200,true,"Rogue", characterItems2);
-        hero.printCharacterSheet();
-        hero.classSpeech();
-        takeDamage(30);
-        heal(20);
-        addGold(500);
-        removeGold(100);
-        addXP(500);
-        isHealthCritical();
-        isAlive();
-        getHealthPercentage();
-        printInventory();
-
-
-
-        if(removeGold(100.00)){
-            System.out.println("bought a potion!");
-        } else {
-            System.out.println("Not enough gold!");
-        }
-
-
-        if(isHealthCritical()){
-            System.out.println("WARNING: Health critical!");
-
-        }
-        System.out.println("Health: " + getHealthPercentage() + "%");
-    }
-
-
-
-
-
-        //opgave 3 metoder begynder
+// opgave 3 indsæt i metoder
 
 //    String navn = "Ragnar";
 //
@@ -144,8 +139,8 @@
 //
 //    String klasse = "Warrior";
 //String[] characterItems;
-
-    String[] characterItems = {"-Sword", "-Dagger", "-Shield"};
+//
+//    String[] characterItems = {"-Sword", "-Dagger", "-Shield"};
 
 
 //

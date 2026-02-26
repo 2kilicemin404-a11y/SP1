@@ -11,8 +11,8 @@ public class Character {
    private String[] characterItems;
 
 
-
    Character(String navn, int healthPoints, int maxHealth, int level, int experience, double gold, boolean alive, String klasse, String[]characterItems){
+       this.navn = navn;
        this.healthPoints = healthPoints;
        this.maxHealth = maxHealth;
        this.level = level;
@@ -22,7 +22,6 @@ public class Character {
        this.klasse = klasse;
        this.characterItems = characterItems;
    }
-
 
     void printCharacterSheet() {
         System.out.println("===== CHARACTER SHEET ====");
@@ -93,7 +92,6 @@ public class Character {
         if(gold >= amount) {
             gold = gold - amount;
             return true;
-
         }else {
             return false;
 
